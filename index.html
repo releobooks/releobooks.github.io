@@ -256,6 +256,15 @@
   </main>
 
   <script>
+    function copiarAlPortapapeles(texto) {
+      try {
+        navigator.clipboard.writeText(texto);
+        alert("Texto copiado al portapapeles!");
+      } catch (err) {
+        console.error('Error al copiar: ', err);
+      }
+    }
+
     function calcularImpacto() {
       const libros = parseInt(document.getElementById("libros").value);
       if (isNaN(libros) || libros <= 0) {
@@ -273,7 +282,7 @@
 
       const url = "https://releobooks.github.io";	
       
-      const mensaje = `Cada libro cuenta. Con ${libros} libros de segunda mano he evitado:\n💨 ${ahorroCO2} kg de CO₂\n💧 ${ahorroAgua} L de agua\n🌳 ${ahorroArboles} árboles \n\nSúmate y comparte el tuyo \n👉 ${url}\n\n@releo\_esp`;
+      const mensaje = `Cada libro cuenta. Con ${libros} libros de segunda mano he evitado:\n💨 ${ahorroCO2} kg de CO₂\n💧 ${ahorroAgua} L de agua\n🌳 ${ahorroArboles} árboles \n\nSúmate y comparte el tuyo \n👉 ${url}\n\n@releo_esp`;
 
       const resultadosDiv = document.getElementById("resultados");
       resultadosDiv.style.display = "block";
@@ -317,24 +326,13 @@
             <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3c-2.76 0-5 2.24-5 5s2.24 5 5 5a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/></svg>
             Instagram
           </a>
-          <button class="copy" onclick="copiarMensaje('${mensaje}')">
+          <button class="copy" onclick="copiarAlPortapapeles('${mensaje.replace(/'/g, "\\'")}')">
             <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
             Copiar texto
           </button>
         </div>
       `;
     }
-
-    async function copiarAlPortapapeles(elementoId) {
-      let texto = document.getElementById(elementoId).innerText;
-      try {
-        await navigator.clipboard.writeText(texto);
-        alert("Texto copiado al portapapeles!");
-      } catch (err) {
-        console.error('Error al copiar: ', err);
-    }
-  }
   </script>
 </body>
 </html>
-
