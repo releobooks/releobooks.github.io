@@ -256,33 +256,26 @@
   </main>
 
   <script>
-    function copiarAlPortapapeles(texto) {
-      try {
-        navigator.clipboard.writeText(texto);
-        alert("Texto copiado al portapapeles!");
-      } catch (err) {
-        console.error('Error al copiar: ', err);
-      }
-    }
-
     function calcularImpacto() {
       const libros = parseInt(document.getElementById("libros").value);
       if (isNaN(libros) || libros <= 0) {
         alert("Introduce un número válido de libros.");
         return;
       }
+    }
 
-      const co2PorLibro = 2.5; 
-      const aguaPorLibro = 7; 
-      const arbolesPorLibro = 0.002; 
+
+    const co2PorLibro = 2.5; 
+    const aguaPorLibro = 7; 
+    const arbolesPorLibro = 0.002; 
 
       const ahorroCO2 = (libros * co2PorLibro).toFixed(1);
       const ahorroAgua = (libros * aguaPorLibro).toFixed(0);
       const ahorroArboles = (libros * arbolesPorLibro).toFixed(3);
 
-      const url = "https://releobooks.github.io";	
+      const url = "https://tusitio.com/calculadora";	
       
-      const mensaje = `Cada libro cuenta. Con ${libros} libros de segunda mano he evitado:\n💨 ${ahorroCO2} kg de CO₂\n💧 ${ahorroAgua} L de agua\n🌳 ${ahorroArboles} árboles \n\nSúmate y comparte el tuyo \n👉 ${url}\n\n@releo_esp`;
+      const mensaje = `Con ${libros} libros de segunda mano he evitado ${ahorroCO2} kg de CO₂, ahorrado ${ahorroAgua} L de agua y preservado ${ahorroArboles} árboles.\nCalcula el tuyo aquí 👉 ${url}\n@releo_esp`;
 
       const resultadosDiv = document.getElementById("resultados");
       resultadosDiv.style.display = "block";
@@ -318,7 +311,7 @@
             <svg viewBox="0 0 24 24"><path d="M9.99 15.17l-.4 5.65c.57 0 .82-.25 1.12-.55l2.68-2.57 5.55 4.06c1.02.56 1.74.27 2.01-.95l3.64-16.92c.32-1.46-.53-2.04-1.51-1.68L1.56 10.28c-1.42.56-1.4 1.35-.24 1.71l5.8 1.81 13.5-8.5c.64-.4 1.23-.18.75.26l-10.38 9.61z"/></svg>
             Telegram
           </a>
-          <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://releobooks.github.io/&quote=${encodeURIComponent(mensaje)}">
+          <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tusitio.com&quote=${encodeURIComponent(mensaje)}">
             <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H8.08v-2.89h2.36V9.41c0-2.33 1.39-3.63 3.52-3.63.72 0 1.44.13 1.44.13v2.42h-.81c-.8 0-1.05.5-1.05 1.01v1.22h2.61l-.42 2.89h-2.19v6.99C18.34 21.13 22 17 22 12z"/></svg>
             Facebook
           </a>
@@ -326,13 +319,84 @@
             <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3c-2.76 0-5 2.24-5 5s2.24 5 5 5a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/></svg>
             Instagram
           </a>
-          <button class="copy" onclick="copiarAlPortapapeles('${mensaje.replace(/'/g, "\\'")}')">
+          <button class="copy" onclick="navigator.clipboard.writeText(mensaje).then(() => alert('Texto copiado al portapapeles!')).catch(err => console.error('Error al copiar:', err));">
             <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-            Copiar texto
+            opiar texto
           </button>
+
         </div>
       `;
     }
+
+    function copiarMensaje(texto) {
+      navigator.clipboard.writeText(texto).then(() => {
+        alert("Texto copiado. Ahora puedes pegarlo en tu Instagram u otra red.");
+      });
+    }
   </script>
+
+
+
+  
+  <footer>
+    <p>© <span id="year"></span> Releo. Todos los derechos reservados.</p>
+    <nav>
+     <a href="/aviso-legal.html">Aviso legal</a> ·
+      <a href="/privacidad.html">Política de privacidad</a> ·
+      <a href="/cookies.html">Política de cookies</a>
+    </nav>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <style>
+  footer {
+    background: var(--fondo-principal);
+    color: var(--texto-sobre-verde);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 6px solid var(--libro-antiguo);
+  }
+  footer nav {
+    margin-top: 0.5rem;
+  }
+  footer nav a {
+    color: var(--texto-sobre-verde);
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  footer nav a:hover {
+    text-decoration: underline;
+  }
+  footer p {
+    margin: 0;
+  }
+  </style>
+
+
+
+  <div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#f4f4f4;padding:15px;text-align:center;box-shadow:0 -2px 5px rgba(0,0,0,0.2);">
+    Usamos cookies propias y de terceros (Google Analytics) para analizar el tráfico. 
+    <a href="/cookies.html">Más información</a>.
+    <button onclick="aceptarCookies()">Aceptar</button>
+    <button onclick="rechazarCookies()">Rechazar</button>
+  </div>
+
+  <script>
+  function aceptarCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    // Aquí insertas el script de Google Analytics
+  }
+  function rechazarCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  </script>
+
+
+
+
+
+  </style>
 </body>
 </html>
