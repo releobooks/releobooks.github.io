@@ -15,30 +15,49 @@
       --detalle: #E45947;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: var(--fondo-complementario);
       color: var(--texto-sobre-claro);
+      line-height: 1.6;
     }
 
     header {
       background: var(--fondo-principal);
       color: var(--texto-sobre-verde);
-      padding: 2rem;
+      padding: 1.5rem;
       text-align: center;
       border-bottom: 6px solid var(--libro-antiguo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-container {
+      margin-bottom: 1rem;
+    }
+
+    .logo {
+      max-width: 120px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid var(--texto-sobre-verde);
     }
 
     h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     main {
       max-width: 700px;
-      margin: 2rem auto;
-      padding: 2rem;
+      margin: 1.5rem auto;
+      padding: 1.5rem;
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -50,7 +69,7 @@
 
     input[type="number"] {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin-top: 10px;
       border: 2px solid var(--fondo-principal);
       border-radius: 8px;
@@ -66,9 +85,12 @@
       cursor: pointer;
       margin-top: 15px;
       font-size: 1rem;
+      width: 100%;
     }
 
-    button:hover { background: #c74636; }
+    button:hover { 
+      background: #c74636; 
+    }
 
     #resultados {
       margin-top: 20px;
@@ -78,11 +100,59 @@
       border-radius: 10px;
     }
 
+    .comparativas {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      border-left: 4px solid var(--libro-moderno);
+    }
+
+    .comparativas h3 {
+      margin-top: 0;
+      color: var(--libro-moderno);
+    }
+
+    .comparativas ul {
+      padding-left: 20px;
+    }
+
+    .comparativas li {
+      margin-bottom: 8px;
+    }
+
+    .contenido-adicional {
+      margin-top: 30px;
+      padding: 20px;
+      background: var(--fondo-complementario);
+      border-radius: 10px;
+    }
+
+    .contenido-adicional h2 {
+      color: var(--fondo-principal);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .benefit-card h3 {
+      color: var(--libro-moderno);
+      margin-top: 0;
+    }
+
     .compartir {
       margin-top: 20px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      justify-content: center;
     }
 
     .compartir a, .compartir button {
@@ -110,10 +180,42 @@
       height: 16px;
       fill: white;
     }
+
+    /* Estilos para dispositivos móviles */
+    @media (max-width: 600px) {
+      header {
+        padding: 1rem;
+      }
+
+      .logo {
+        max-width: 80px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      main {
+        margin: 1rem auto;
+        padding: 1rem;
+      }
+
+      button {
+        padding: 10px 15px;
+      }
+
+      .compartir a, .compartir button {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <div class="logo-container">
+      <img src="LOGO.jpg" alt="Logo Releo" class="logo">
+    </div>
     <h1>Calculadora de Impacto Ambiental</h1>
     <p>Descubre el ahorro ambiental al elegir libros de segunda mano</p>
   </header>
@@ -127,6 +229,30 @@
     </div>
     
     <div id="resultados" style="display:none;"></div>
+    
+    <div class="contenido-adicional">
+      <h2>¿Por qué elegir libros de segunda mano?</h2>
+      
+      <div class="benefit-card">
+        <h3>🌱 Impacto ambiental positivo</h3>
+        <p>Cada libro de segunda mano que compras evita la tala de árboles, el consumo de agua y la emisión de gases de efecto invernadero asociados a la producción de nuevos libros.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <h3>📚 Cultura circular</h3>
+        <p>Al comprar libros usados, fomentas la economía circular y das una segunda vida a historias que merecen ser leídas por más personas.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <h3>💰 Ahorro económico</h3>
+        <p>Los libros de segunda mano suelen costar entre un 50% y un 70% menos que los nuevos, permitiéndote leer más por menos dinero.</p>
+      </div>
+      
+      <div class="benefit-card">
+        <h3>🔍 Tesoros literarios</h3>
+        <p>En los libros usados puedes encontrar ediciones agotadas, dedicatorias de anteriores dueños y pequeñas sorpresas que los hacen únicos.</p>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -145,9 +271,9 @@
       const ahorroAgua = (libros * aguaPorLibro).toFixed(0);
       const ahorroArboles = (libros * arbolesPorLibro).toFixed(3);
 
-      const url = "https://tusitio.com/calculadora";	
+      const url = "https://releobooks.github.io";	
       
-      const mensaje = `Con ${libros} libros de segunda mano he evitado ${ahorroCO2} kg de CO₂, ahorrado ${ahorroAgua} L de agua y preservado ${ahorroArboles} árboles.\nCalcula el tuyo aquí 👉 ${url}\n@releo_esp`;
+      const mensaje = `Cada libro cuenta. Con ${libros} libros de segunda mano he evitado:\n💨 ${ahorroCO2} kg de CO₂\n💧 ${ahorroAgua} L de agua\n🌳 ${ahorroArboles} árboles \n\nSúmate y comparte el tuyo \n👉 ${url}\n\n@releo\_esp`;
 
       const resultadosDiv = document.getElementById("resultados");
       resultadosDiv.style.display = "block";
@@ -158,6 +284,17 @@
           <li><strong>${ahorroAgua} litros</strong> de agua ahorrados</li>
           <li><strong>${ahorroArboles}</strong> árboles preservados</li>
         </ul>
+        
+        <div class="comparativas">
+          <h3>¿Sabías que...?</h3>
+          <ul>
+            <li>Producir un libro nuevo emite aproximadamente <strong>${co2PorLibro} kg de CO₂</strong>, equivalente a viajar 15 km en coche.</li>
+            <li>Se necesitan <strong>${aguaPorLibro} litros de agua</strong> para producir un libro, suficiente para una persona durante 3 días.</li>
+            <li>Para producir <strong>500 libros nuevos</strong> se necesita talar un árbol completo.</li>
+            <li>Si todos en España compráramos <strong>un libro de segunda mano al año</strong>, ahorraríamos más de <strong>100 millones de litros de agua</strong>.</li>
+          </ul>
+        </div>
+        
         <p>¡Comparte tu ahorro y ayúdanos a difundir el impacto positivo!</p>
         <div class="compartir">
           <a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(mensaje)}">
