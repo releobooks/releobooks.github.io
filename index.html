@@ -309,7 +309,7 @@
             <svg viewBox="0 0 24 24"><path d="M9.99 15.17l-.4 5.65c.57 0 .82-.25 1.12-.55l2.68-2.57 5.55 4.06c1.02.56 1.74.27 2.01-.95l3.64-16.92c.32-1.46-.53-2.04-1.51-1.68L1.56 10.28c-1.42.56-1.4 1.35-.24 1.71l5.8 1.81 13.5-8.5c.64-.4 1.23-.18.75.26l-10.38 9.61z"/></svg>
             Telegram
           </a>
-          <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://tusitio.com&quote=${encodeURIComponent(mensaje)}">
+          <a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://releobooks.github.io/&quote=${encodeURIComponent(mensaje)}">
             <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H8.08v-2.89h2.36V9.41c0-2.33 1.39-3.63 3.52-3.63.72 0 1.44.13 1.44.13v2.42h-.81c-.8 0-1.05.5-1.05 1.01v1.22h2.61l-.42 2.89h-2.19v6.99C18.34 21.13 22 17 22 12z"/></svg>
             Facebook
           </a>
@@ -325,11 +325,16 @@
       `;
     }
 
-    function copiarMensaje(texto) {
-      navigator.clipboard.writeText(texto).then(() => {
-        alert("Texto copiado. Ahora puedes pegarlo en tu Instagram u otra red.");
-      });
+    async function copiarAlPortapapeles(elementoId) {
+      let texto = document.getElementById(elementoId).innerText;
+      try {
+        await navigator.clipboard.writeText(texto);
+        alert("Texto copiado al portapapeles!");
+      } catch (err) {
+        console.error('Error al copiar: ', err);
     }
+  }
   </script>
 </body>
 </html>
+
