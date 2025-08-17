@@ -262,12 +262,10 @@
         alert("Introduce un número válido de libros.");
         return;
       }
-    }
 
-
-    const co2PorLibro = 2.5; 
-    const aguaPorLibro = 7; 
-    const arbolesPorLibro = 0.002; 
+      const co2PorLibro = 2.5; 
+      const aguaPorLibro = 7; 
+      const arbolesPorLibro = 0.002; 
 
       const ahorroCO2 = (libros * co2PorLibro).toFixed(1);
       const ahorroAgua = (libros * aguaPorLibro).toFixed(0);
@@ -321,9 +319,8 @@
           </a>
           <button class="copy" onclick="navigator.clipboard.writeText(mensaje).then(() => alert('Texto copiado al portapapeles!')).catch(err => console.error('Error al copiar:', err));">
             <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-            opiar texto
+            Copiar texto
           </button>
-
         </div>
       `;
     }
@@ -334,9 +331,6 @@
       });
     }
   </script>
-
-
-
   
   <footer>
     <p>© <span id="year"></span> Releo. Todos los derechos reservados.</p>
@@ -349,32 +343,31 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  
   <style>
-  footer {
-    background: var(--fondo-principal);
-    color: var(--texto-sobre-verde);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    border-top: 6px solid var(--libro-antiguo);
-  }
-  footer nav {
-    margin-top: 0.5rem;
-  }
-  footer nav a {
-    color: var(--texto-sobre-verde);
-    text-decoration: none;
-    margin: 0 5px;
-  }
-  footer nav a:hover {
-    text-decoration: underline;
-  }
-  footer p {
-    margin: 0;
-  }
+    footer {
+      background: var(--fondo-principal);
+      color: var(--texto-sobre-verde);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 6px solid var(--libro-antiguo);
+    }
+    footer nav {
+      margin-top: 0.5rem;
+    }
+    footer nav a {
+      color: var(--texto-sobre-verde);
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    footer nav a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      margin: 0;
+    }
   </style>
-
-
 
   <div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#f4f4f4;padding:15px;text-align:center;box-shadow:0 -2px 5px rgba(0,0,0,0.2);">
     Usamos cookies propias y de terceros (Google Analytics) para analizar el tráfico. 
@@ -384,29 +377,27 @@
   </div>
 
   <script>
-  function aceptarCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    // Aquí insertas el script de Google Analytics
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M090X4Q7S2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    function aceptarCookies() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      // Crear y añadir el script de Google Analytics dinámicamente
+      const script1 = document.createElement('script');
+      script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-M090X4Q7S2';
+      script1.async = true;
+      document.head.appendChild(script1);
+      
+      const script2 = document.createElement('script');
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-      
         gtag('config', 'G-M090X4Q7S2');
-    </script>
-  }
-  function rechazarCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
+      `;
+      document.head.appendChild(script2);
+    }
+    
+    function rechazarCookies() {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
   </script>
-
-
-
-
-
-  </style>
 </body>
 </html>
-
