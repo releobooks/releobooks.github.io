@@ -387,6 +387,15 @@
   function aceptarCookies() {
     document.getElementById('cookie-banner').style.display = 'none';
     // Aquí insertas el script de Google Analytics
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M090X4Q7S2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'G-M090X4Q7S2');
+    </script>
   }
   function rechazarCookies() {
     document.getElementById('cookie-banner').style.display = 'none';
@@ -400,3 +409,4 @@
   </style>
 </body>
 </html>
+
