@@ -385,12 +385,11 @@
   </div>
 
   <script>
-    // Comprobar preferencia al cargar la página
+    // Al cargar la página comprobamos si ya aceptó
     window.onload = function() {
       const pref = localStorage.getItem("cookies_preferencia");
       if (pref === "aceptadas") {
         cargarAnalytics();
-      } else if (pref === "rechazadas") {
         document.getElementById('cookie-banner').style.display = 'none';
       } else {
         document.getElementById('cookie-banner').style.display = 'block';
@@ -404,12 +403,12 @@
     }
   
     function rechazarCookies() {
-      localStorage.setItem("cookies_preferencia", "rechazadas");
+      // No guardamos nada → volverá a salir el banner en la próxima visita
+      localStorage.removeItem("cookies_preferencia");
       document.getElementById('cookie-banner').style.display = 'none';
     }
   
     function cargarAnalytics() {
-      // Crear y añadir el script de Google Analytics dinámicamente
       const script1 = document.createElement('script');
       script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-M090X4Q7S2';
       script1.async = true;
@@ -425,9 +424,11 @@
       document.head.appendChild(script2);
     }
   </script>
+  
 
 </body>
 </html>
+
 
 
 
