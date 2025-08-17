@@ -385,8 +385,30 @@
   </div>
 
   <script>
+    // Comprobar preferencia al cargar la página
+    window.onload = function() {
+      const pref = localStorage.getItem("cookies_preferencia");
+      if (pref === "aceptadas") {
+        cargarAnalytics();
+      } else if (pref === "rechazadas") {
+        document.getElementById('cookie-banner').style.display = 'none';
+      } else {
+        document.getElementById('cookie-banner').style.display = 'block';
+      }
+    }
+  
     function aceptarCookies() {
+      localStorage.setItem("cookies_preferencia", "aceptadas");
       document.getElementById('cookie-banner').style.display = 'none';
+      cargarAnalytics();
+    }
+  
+    function rechazarCookies() {
+      localStorage.setItem("cookies_preferencia", "rechazadas");
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  
+    function cargarAnalytics() {
       // Crear y añadir el script de Google Analytics dinámicamente
       const script1 = document.createElement('script');
       script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-M090X4Q7S2';
@@ -402,11 +424,8 @@
       `;
       document.head.appendChild(script2);
     }
-    
-    function rechazarCookies() {
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
   </script>
+
 </body>
 </html>
 
