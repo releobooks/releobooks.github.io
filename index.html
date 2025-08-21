@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RELEO - Librería de Segunda Mano</title>
+    <meta name="description" content="Descubre historias con segunda vida. RELEO es tu librería de segunda mano comprometida con la cultura circular y la sostenibilidad.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- CONFIGURACIÓN CENTRALIZADA -->
+    <script src="js/config.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWE21BTW4G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LWE21BTW4G');
+    </script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2136034320223146');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2136034320223146&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="RELEO" class="logo-img">
+                <span class="logo-text">RELEO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li><a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="calculadora.html" class="nav-link">Calculadora de Impacto</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Descubre Historias con Segunda Vida</h1>
+            <p class="hero-subtitle">En RELEO creemos que cada libro merece una segunda oportunidad. Únete a nuestra comunidad de lectores comprometidos con la cultura circular y la sostenibilidad.</p>
+            <div class="hero-buttons">
+                <a href="calculadora.html" class="btn btn-primary">Calcula tu Impacto</a>
+                <a href="sobre-nosotros.html" class="btn btn-secondary">Conoce Nuestra Misión</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- MODIFICAR ESTA IMAGEN: CAMBIAR EL SRC POR LA IMAGEN DESEADA -->
+            <img src="images/hero-books.jpg" alt="Libros de segunda mano" class="hero-image-img">
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir RELEO?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h3>Impacto Ambiental Positivo</h3>
+                    <p>Cada libro de segunda mano que compras evita la tala de árboles, el consumo de agua y la emisión de gases de efecto invernadero.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Cultura Circular</h3>
+                    <p>Fomentamos la economía circular dando una segunda vida a historias que merecen ser leídas por más personas.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Ahorro Inteligente</h3>
+                    <p>Accede a libros de calidad entre un 50% y un 70% más económicos que los nuevos, sin sacrificar la experiencia.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>Tesoros Literarios</h3>
+                    <p>Encuentra ediciones agotadas, dedicatorias de anteriores dueños y pequeñas sorpresas que los hacen únicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas de Impacto -->
+    <section class="impact-stats">
+        <div class="container">
+            <h2 class="section-title">Nuestro Impacto</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Libros Reciclados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="25000">0</div>
+                    <div class="stat-label">Litros de Agua Ahorrados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Árboles Preservados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="15000">0</div>
+                    <div class="stat-label">kg de CO₂ Evitados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Únete a la Revolución de la Lectura Sostenible</h2>
+                <p class="cta-subtitle">Descubre cómo tus hábitos de lectura pueden marcar la diferencia en el planeta.</p>
+                <a href="calculadora.html" class="btn btn-primary btn-large">Calcula tu Impacto Ambiental</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="RELEO" class="footer-logo-img">
+                        <span class="footer-logo-text">RELEO</span>
+                    </div>
+                    <p class="footer-description">Dando segunda vida a las historias, cuidando nuestro planeta.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="calculadora.html">Calculadora de Impacto</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-contact">
+                        <li>📧 <a href="#" class="email-contacto"></a></li>
+                        <li>📞 <a href="#" class="telefono-contacto"></a></li>
+                        <li>📞 <a href="#" class="telefono-contacto"></a></li>
+                        <li>📍 <span class="direccion-contacto"></span></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link instagram-link" target="_blank" aria-label="Instagram">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3c-2.76 0-5 2.24-5 5s2.24 5 5 5a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link facebook-link" target="_blank" aria-label="Facebook">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H8.08v-2.89h2.36V9.41c0-2.33 1.39-3.63 3.52-3.63.72 0 1.44.13 1.44.13v2.42h-.81c-.8 0-1.05.5-1.05 1.01v1.22h2.61l-.42 2.89h-2.19v6.99C18.34 21.13 22 17 22 12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link twitter-link" target="_blank" aria-label="Twitter">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.26 4.26 0 0 0 1.88-2.36 8.59 8.59 0 0 1-2.72 1.04 4.25 4.25 0 0 0-7.24 3.87 12.05 12.05 0 0 1-8.75-4.43 4.25 4.25 0 0 0 1.32 5.67 4.2 4.2 0 0 1-1.92-.53v.05c0 2.1 1.5 3.86 3.5 4.26a4.28 4.28 0 0 1-1.91.07c.54 1.7 2.11 2.94 3.97 2.98A8.53 8.53 0 0 1 2 19.54 12.04 12.04 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68v-.53A8.27 8.27 0 0 0 22.46 6z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link linkedin-link" target="_blank" aria-label="LinkedIn">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link iberlibro-link" target="_blank" aria-label="Iberlibro">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RELEO. Todos los derechos reservados. | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> | <a href="cookies.html">Cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
