@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - RELEO</title>
+    <meta name="description" content="Política de cookies de RELEO. Información sobre las cookies que utilizamos en nuestro sitio web y cómo configurarlas.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <style>
+        .cookies-hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-2) 100%);
+            color: var(--color-white);
+            padding: var(--spacing-xxl) 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .cookies-section {
+            padding: var(--spacing-xxl) 0;
+            background-color: var(--color-white);
+        }
+
+        .cookies-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .cookies-content {
+            background-color: var(--color-background);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+
+        .cookies-section-title {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        .cookies-text {
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cookies-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .cookies-list li {
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+
+        .cookies-list li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            padding: var(--spacing-sm);
+            text-align: left;
+            border-bottom: 1px solid var(--color-gray-light);
+        }
+
+        .cookie-table th {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            font-weight: 600;
+        }
+
+        .cookie-table tr:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .cookie-category {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background-color: var(--color-accent-2);
+            color: var(--color-white);
+            border-radius: var(--border-radius);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background-color: var(--color-secondary);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin: var(--spacing-lg) 0;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--color-gray-medium);
+            font-style: italic;
+            margin-top: var(--spacing-xl);
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--color-text);
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .cookie-banner-text {
+            flex: 1;
+        }
+
+        .cookie-banner-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .cookie-btn {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-btn-accept {
+            background-color: var(--color-highlight);
+            color: var(--color-white);
+        }
+
+        .cookie-btn-accept:hover {
+            background-color: #d64534;
+        }
+
+        .cookie-btn-reject {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 1px solid var(--color-white);
+        }
+
+        .cookie-btn-reject:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .cookie-btn-settings {
+            background-color: transparent;
+            color: var(--color-white);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-banner-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .cookie-table {
+                font-size: 0.875rem;
+            }
+
+            .cookie-table th,
+            .cookie-table td {
+                padding: var(--spacing-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="RELEO" class="logo-img">
+                <span class="logo-text">RELEO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="calculadora.html" class="nav-link">Calculadora de Impacto</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="cookies-hero">
+        <div class="container">
+            <h1 class="hero-title">Política de Cookies</h1>
+            <p class="hero-subtitle">Conoce cómo utilizamos las cookies para mejorar tu experiencia en nuestro sitio web</p>
+        </div>
+    </section>
+
+    <!-- Contenido de Cookies -->
+    <section class="cookies-section">
+        <div class="cookies-container">
+            <div class="cookies-content">
+                <h2 class="cookies-section-title">1. ¿Qué son las Cookies?</h2>
+                <p class="cookies-text">
+                    Las cookies son pequeños archivos de texto que los sitios web almacenan en tu dispositivo (ordenador, tablet o móvil) cuando los visitas. Contienen información que se utiliza para mejorar tu experiencia de navegación y proporcionar funcionalidades específicas.
+                </p>
+                <p class="cookies-text">
+                    En RELEO utilizamos cookies para analizar cómo interactúas con nuestro sitio web, recordar tus preferencias y ofrecer contenido personalizado.
+                </p>
+
+                <h2 class="cookies-section-title">2. Tipos de Cookies que Utilizamos</h2>
+                <p class="cookies-text">
+                    En nuestro sitio web utilizamos diferentes tipos de cookies, cada una con una finalidad específica:
+                </p>
+
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo de Cookie</th>
+                            <th>Finalidad</th>
+                            <th>Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cookie-category">Necesarias</span></td>
+                            <td>Esenciales para el funcionamiento básico del sitio web. Permiten la navegación y el acceso a áreas seguras.</td>
+                            <td>Sesión / 1 año</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cookie-category">Analíticas</span></td>
+                            <td>Recopilan información anónima sobre cómo utilizas el sitio web para ayudarnos a mejorarlo.</td>
+                            <td>6 meses - 2 años</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cookie-category">Funcionales</span></td>
+                            <td>Recuerdan tus preferencias (como idioma o región) para mejorar tu experiencia.</td>
+                            <td>1 año</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cookie-category">Publicitarias</span></td>
+                            <td>Se utilizan para mostrarte anuncios relevantes según tus intereses y hábitos de navegación.</td>
+                            <td>6 meses - 1 año</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="cookies-section-title">3. Cookies Específicas que Utilizamos</h2>
+                <p class="cookies-text">
+                    A continuación, te detallamos las cookies específicas que utilizamos en nuestro sitio web:
+                </p>
+
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre de la Cookie</th>
+                            <th>Finalidad</th>
+                            <th>Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>releo_session</td>
+                            <td>Mantiene tu sesión de usuario activa mientras navegas por el sitio.</td>
+                            <td>Sesión</td>
+                        </tr>
+                        <tr>
+                            <td>releo_preferences</td>
+                            <td>Recuerda tus preferencias de idioma y configuraciones.</td>
+                            <td>1 año</td>
+                        </tr>
+                        <tr>
+                            <td>_ga</td>
+                            <td>Cookie de Google Analytics para análisis de tráfico anónimo.</td>
+                            <td>2 años</td>
+                        </tr>
+                        <tr>
+                            <td>_gid</td>
+                            <td>Cookie de Google Analytics para identificar usuarios únicos.</td>
+                            <td>24 horas</td>
+                        </tr>
+                        <tr>
+                            <td>releo_consent</td>
+                            <td>Almacena tu consentimiento para el uso de cookies.</td>
+                            <td>1 año</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="cookies-section-title">4. ¿Cómo Puedes Gestionar las Cookies?</h2>
+                <p class="cookies-text">
+                    Tienes varias opciones para gestionar las cookies en nuestro sitio web:
+                </p>
+                <ul class="cookies-list">
+                    <li><strong>Aceptar todas:</strong> Puedes aceptar todas las cookies haciendo clic en "Aceptar" en nuestro banner de cookies.</li>
+                    <li><strong>Rechazar todas:</strong> Puedes rechazar todas las cookies excepto las necesarias haciendo clic en "Rechazar".</li>
+                    <li><strong>Configuración personalizada:</strong> Puedes seleccionar qué tipos de cookies quieres aceptar a través de nuestro panel de configuración.</li>
+                    <li><strong>Configuración del navegador:</strong> Puedes configurar tu navegador para bloquear o eliminar cookies. Ten en cuenta que esto puede afectar el funcionamiento del sitio web.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Configuración por navegador:</strong><br>
+                    • <strong>Chrome:</strong> Configuración > Privacidad y seguridad > Cookies y otros datos de sitios<br>
+                    • <strong>Firefox:</strong> Opciones > Privacidad y seguridad > Cookies y datos de sitios web<br>
+                    • <strong>Safari:</strong> Preferencias > Privacidad > Cookies y datos de sitios web<br>
+                    • <strong>Edge:</strong> Configuración > Privacidad, búsqueda y servicios > Cookies y permisos de sitio
+                </div>
+
+                <h2 class="cookies-section-title">5. Cookies de Terceros</h2>
+                <p class="cookies-text">
+                    Nuestro sitio web puede incluir contenido de terceros, como Google Analytics para análisis de tráfico, o redes sociales para compartir contenido. Estos terceros pueden colocar sus propias cookies en tu dispositivo cuando interactúas con su contenido.
+                </p>
+                <p class="cookies-text">
+                    No controlamos las cookies de estos terceros. Te recomendamos revisar las políticas de privacidad de estos servicios para obtener más información sobre cómo utilizan las cookies:
+                </p>
+                <ul class="cookies-list">
+                    <li><a href="https://policies.google.com/privacy" target="_blank" style="color: var(--color-primary);">Política de privacidad de Google</a></li>
+                    <li><a href="https://www.facebook.com/privacy/policy/" target="_blank" style="color: var(--color-primary);">Política de privacidad de Facebook</a></li>
+                    <li><a href="https://twitter.com/privacy" target="_blank" style="color: var(--color-primary);">Política de privacidad de Twitter</a></li>
+                </ul>
+
+                <h2 class="cookies-section-title">6. Actualizaciones de esta Política</h2>
+                <p class="cookies-text">
+                    Podemos actualizar esta Política de Cookies periódicamente para reflejar cambios en las cookies que utilizamos o por razones operativas, legales o regulatorias. Te recomendamos revisar esta página regularmente para estar informado sobre cualquier cambio.
+                </p>
+
+                <h2 class="cookies-section-title">7. Contacto</h2>
+                <p class="cookies-text">
+                    Si tienes alguna pregunta sobre esta Política de Cookies o sobre cómo utilizamos las cookies en nuestro sitio web, puedes contactarnos:
+                </p>
+                <ul class="cookies-list">
+                    <li>Email: <a href="mailto:info@releo.es" style="color: var(--color-primary);">info@releo.es</a></li>
+                    <li>Teléfono: +34 900 123 456</li>
+                    <li>Dirección: Calle Literatura 123, 28001 Madrid, España</li>
+                </ul>
+
+                <p class="last-updated">
+                    Última actualización: 21 de agosto de 2024
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de Cookies (simulado para demostración) -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <p>Utilizamos cookies propias y de terceros para mejorar tu experiencia y analizar el tráfico. Al continuar navegando, aceptas nuestro uso de cookies.</p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceptar</button>
+                <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rechazar</button>
+                <a href="cookies.html" class="cookie-btn cookie-btn-settings">Configurar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="RELEO" class="footer-logo-img">
+                        <span class="footer-logo-text">RELEO</span>
+                    </div>
+                    <p class="footer-description">Dando segunda vida a las historias, cuidando nuestro planeta.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="calculadora.html">Calculadora de Impacto</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RELEO. Todos los derechos reservados. | <a href="aviso-legal.html">Aviso Legal</a> | <a href="privacidad.html">Privacidad</a> | <a href="cookies.html">Cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Funciones para el banner de cookies (solo para demostración)
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideCookieBanner();
+            showNotification('Cookies aceptadas. Gracias por tu preferencia.', 'success');
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            hideCookieBanner();
+            showNotification('Cookies rechazadas. Solo se utilizarán las cookies necesarias.', 'info');
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            banner.classList.remove('show');
+        }
+
+        // Mostrar banner de cookies si no hay consentimiento previo
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(() => {
+                    document.getElementById('cookieBanner').classList.add('show');
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
