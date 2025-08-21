@@ -258,13 +258,13 @@
             // Factores de impacto ambiental por libro
             const co2PorLibro = 2.5; // kg de CO2 por libro
             const aguaPorLibro = 7; // litros de agua por libro
-            const arbolesPorLibro = 0.002; // árboles por libro (1 árbol = 500 libros)
+            
             const energiaPorLibro = 2; // kWh por libro
 
             // Cálculos
             const ahorroCO2 = (libros * co2PorLibro).toFixed(1);
             const ahorroAgua = (libros * aguaPorLibro).toFixed(0);
-            const ahorroArboles = (libros * arbolesPorLibro).toFixed(3);
+            
             const ahorroEnergia = (libros * energiaPorLibro).toFixed(0);
 
             // Mostrar resultados con animación
@@ -274,7 +274,7 @@
             // Animar números
             animateNumber("co2-ahorrado", ahorroCO2);
             animateNumber("agua-ahorrada", ahorroAgua);
-            animateNumber("arboles-preservados", ahorroArboles);
+            
             animateNumber("energia-ahorrada", ahorroEnergia);
 
             // Scroll a resultados
@@ -360,3 +360,4 @@
 </body>
 
 </html>
+
