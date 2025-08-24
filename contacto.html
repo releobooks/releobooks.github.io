@@ -302,5 +302,43 @@
     </footer>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/script.js"></script>
+
+
+    <script>
+        
+     // Función para toggle de FAQs
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            const allQuestions = document.querySelectorAll('.faq-question');
+            
+            // Cerrar todas las demás respuestas
+            allAnswers.forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('show');
+                }
+            });
+            
+            // Quitar active de todas las preguntas
+            allQuestions.forEach(q => {
+                if (q !== button) {
+                    q.style.backgroundColor = '';
+                }
+            });
+            
+            // Toggle la respuesta actual
+            answer.classList.toggle('show');
+            
+            // Cambiar color de la pregunta
+            if (answer.classList.contains('show')) {
+                button.style.backgroundColor = 'var(--color-secondary)';
+            } else {
+                button.style.backgroundColor = '';
+            }
+        }
+
+    </script>
+    
 </body>
+
 </html>
