@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Impacto - RELEO</title>
+    <meta name="description"
+        content="Calcula el impacto ambiental positivo de comprar libros de segunda mano. Descubre cuántos árboles, agua y CO₂ ahorras con RELEO.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CONFIGURACIÓN CENTRALIZADA -->
+    <script src="js/config.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWE21BTW4G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LWE21BTW4G');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2136034320223146');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2136034320223146&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <img src="images/logo.png" alt="RELEO" class="logo-img">
+                <span class="logo-text">RELEO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="calculadora.html" class="nav-link active">Calculadora</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container fade-in-up">
+            <h1 class="page-hero-title">Calculadora de Impacto</h1>
+            <p class="page-hero-subtitle">Descubre el ahorro ambiental real al elegir libros de segunda mano.</p>
+        </div>
+    </section>
+
+    <!-- Calculadora -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container fade-in-up">
+                <div class="calculator-header">
+                    <h2>¿Cuál es tu ahorro ambiental?</h2>
+                    <p>Introduce la cantidad de libros que sueles comprar y descubre tu contribución al planeta.</p>
+                </div>
+
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="libros" class="form-label">Libros comprados al año</label>
+                        <input type="number" id="libros" class="form-input" placeholder="Ej: 12" min="1" max="1000">
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-large" onclick="calcularImpacto()">
+                        <i class="fas fa-calculator"></i> Calcular Mi Impacto
+                    </button>
+                </div>
+
+                <div id="resultados" class="results-section">
+                    <h3 class="text-center mb-4">¡Tu impacto es extraordinario!</h3>
+
+                    <div class="results-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="co2-ahorrado">0</div>
+                            <div class="stat-label">kg de CO₂ evitados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="agua-ahorrada">0</div>
+                            <div class="stat-label">litros de agua ahorrados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="energia-ahorrada">0</div>
+                            <div class="stat-label">kWh de energía ahorrada</div>
+                        </div>
+                    </div>
+
+                    <div class="comparative-section">
+                        <h3 class="comparative-title">¿Sabías que...?</h3>
+                        <ul class="comparative-list">
+                            <li class="comparative-item">
+                                <strong>Producción de CO₂:</strong> Producir un libro nuevo emite aprox. 2.5 kg de CO₂,
+                                equivalente a cargar tu móvil 300 veces.
+                            </li>
+                            <li class="comparative-item">
+                                <strong>Consumo de Agua:</strong> Se necesitan 7 litros de agua para un solo libro, lo
+                                mismo que bebes en 3 días.
+                            </li>
+                            <li class="comparative-item">
+                                <strong>Tala de Árboles:</strong> Un árbol de tamaño medio produce unos 500 libros. Cada
+                                libro cuenta.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="share-section">
+                        <h4>¡Inspira a otros compartiendo tu resultado!</h4>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn share-twitter" onclick="shareOnTwitter(); return false;">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <a href="#" class="share-btn share-whatsapp" onclick="shareOnWhatsApp(); return false;">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="#" class="share-btn share-facebook" onclick="shareOnFacebook(); return false;">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </a>
+                            <button class="share-btn share-copy" onclick="copyToClipboard();">
+                                <i class="fas fa-link"></i> Copiar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios Adicionales -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Cuidar el planeta es una buena lectura</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Impacto Real</h3>
+                    <p>Evitas la tala innecesaria y reduces la huella de carbono de la industria editorial.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-recycle"></i></div>
+                    <h3>Cultura Circular</h3>
+                    <p>Das una segunda vida a historias que merecen seguir siendo contadas.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-piggy-bank"></i></div>
+                    <h3>Precio Justo</h3>
+                    <p>Calidad literaria con un ahorro de hasta el 70% comparado con libros nuevos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="RELEO" class="footer-logo-img">
+                        <span class="footer-logo-text">RELEO</span>
+                    </div>
+                    <p class="footer-description">Dando segunda vida a las historias, cuidando nuestro planeta a través
+                        de la cultura circular.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Explora</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="calculadora.html">Calculadora</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> <a
+                                href="mailto:releobusines@gmail.com">releobusines@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:623125636">623 12 56 36</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>Paterna del Campo, Huelva</span></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/releo_esp" class="social-link" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61579012004628" class="social-link"
+                            target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/releo_esp" class="social-link" target="_blank"><i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RELEO. Cultura Circular S.L. | <a href="aviso-legal.html">Aviso Legal</a> | <a
+                        href="privacidad.html">Privacidad</a> | <a href="cookies.html">Cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function calcularImpacto() {
+            const libros = parseInt(document.getElementById("libros").value);
+
+            if (isNaN(libros) || libros <= 0) {
+                if (window.showNotification) showNotification("Por favor, introduce un número válido de libros.", "error");
+                else alert("Por favor, introduce un número válido de libros.");
+                return;
+            }
+
+            const co2PorLibro = 2.5;
+            const aguaPorLibro = 7;
+            const energiaPorLibro = 2;
+
+            const ahorroCO2 = libros * co2PorLibro;
+            const ahorroAgua = libros * aguaPorLibro;
+            const ahorroEnergia = libros * energiaPorLibro;
+
+            const resultadosDiv = document.getElementById("resultados");
+            resultadosDiv.classList.add("show");
+
+            animateNumber("co2-ahorrado", ahorroCO2, 1);
+            animateNumber("agua-ahorrada", ahorroAgua, 0);
+            animateNumber("energia-ahorrada", ahorroEnergia, 0);
+
+            setTimeout(() => {
+                resultadosDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function animateNumber(elementId, targetValue, decimals = 0) {
+            const element = document.getElementById(elementId);
+            const duration = 1500;
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easedProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
+
+                const currentValue = easedProgress * targetValue;
+                element.textContent = currentValue.toFixed(decimals);
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        function shareOnTwitter() {
+            const libros = document.getElementById("libros").value;
+            const co2 = document.getElementById("co2-ahorrado").textContent;
+            const texto = `¡He ahorrado ${co2}kg de CO₂ comprando ${libros} libros de segunda mano en RELEO! 🌱📚 Calcula tu impacto:`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(texto)}&url=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const libros = document.getElementById("libros").value;
+            const co2 = document.getElementById("co2-ahorrado").textContent;
+            const texto = `He ahorrado ${co2}kg de CO₂ con ${libros} libros de segunda mano en RELEO! 🌱📚 ${window.location.href}`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
+        }
+
+        function shareOnFacebook() {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+        }
+
+        function copyToClipboard() {
+            const libros = document.getElementById("libros").value;
+            const co2 = document.getElementById("co2-ahorrado").textContent;
+            const texto = `He ahorrado ${co2}kg de CO₂ con ${libros} libros de segunda mano en RELEO! 🌱📚 ${window.location.href}`;
+
+            navigator.clipboard.writeText(texto).then(() => {
+                if (window.showNotification) showNotification("¡Copiado al portapapeles!", "success");
+                else alert("¡Copiado al portapapeles!");
+            });
+        }
+
+        document.getElementById("libros").addEventListener("keypress", (e) => {
+            if (e.key === "Enter") calcularImpacto();
+        });
+    </script>
+</body>
+
+</html>

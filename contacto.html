@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - RELEO</title>
+    <meta name="description"
+        content="Contacta con RELEO. Estamos aquí para resolver tus dudas sobre cultura circular y libros de segunda mano.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CONFIGURACIÓN CENTRALIZADA -->
+    <script src="js/config.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWE21BTW4G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LWE21BTW4G');
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2136034320223146');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2136034320223146&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <img src="images/logo.png" alt="RELEO" class="logo-img">
+                <span class="logo-text">RELEO</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="calculadora.html" class="nav-link">Calculadora de Impacto</a></li>
+                <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-hero-title">Contacta con RELEO</h1>
+            <p class="page-hero-subtitle">Estamos aquí para resolver tus dudas sobre cultura circular y libros de
+                segunda mano.</p>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Información de Contacto</h2>
+                    <p>Ponte en contacto con nosotros. Estaremos encantados de ayudarte en tu camino hacia una lectura
+                        más sostenible.</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:releobusines@gmail.com">releobusines@gmail.com</a></p>
+                            <p style="font-size:0.85rem; color: var(--color-text-muted); margin:0;">Respondemos en menos
+                                de 24 horas</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-details">
+                            <h3>Teléfono</h3>
+                            <p><a href="tel:623125636">623 12 56 36</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details">
+                            <h3>Dirección</h3>
+                            <p>Paterna del Campo, Huelva</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Envíanos un mensaje</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" class="form-input" required
+                                    placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="apellidos">Apellidos</label>
+                                <input type="text" id="apellidos" name="apellidos" class="form-input" required
+                                    placeholder="Tus apellidos">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-input" required
+                                placeholder="Tu número de teléfono">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" class="form-input" required
+                                placeholder="¿En qué podemos ayudarte?">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" class="form-input form-textarea" required
+                                placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn"
+                            style="width:100%; padding: var(--spacing-md); font-size:1.05rem;">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-placeholder">
+                <iframe class="mapa-iframe" src="" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cómo puedo donar o vender mis libros?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Escríbenos a través del formulario o por WhatsApp y te informaremos sobre nuestro proceso de
+                            recogida y valoración.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuál es el estado de los libros?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cada libro pasa por un control de calidad riguroso. Solo aceptamos libros en buen estado que
+                            puedan ser disfrutados por un nuevo lector.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Hacen envíos a toda España?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Realizamos envíos a toda la península, Baleares y Canarias con logística optimizada para
+                            reducir nuestra huella de carbono.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="RELEO" class="footer-logo-img">
+                        <span class="footer-logo-text">RELEO</span>
+                    </div>
+                    <p class="footer-description">Dando segunda vida a las historias, cuidando nuestro planeta a través
+                        de la cultura circular.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Explora</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="calculadora.html">Calculadora de Impacto</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> <a
+                                href="mailto:releobusines@gmail.com">releobusines@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:623125636">623 12 56 36</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>Paterna del Campo, Huelva</span></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/releo_esp" class="social-link" target="_blank"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61579012004628" class="social-link"
+                            target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/releo_esp" class="social-link" target="_blank"
+                            aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RELEO. Todos los derechos reservados. | <a href="aviso-legal.html">Aviso Legal</a> | <a
+                        href="privacidad.html">Privacidad</a> | <a href="cookies.html">Cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function toggleFAQ(button) {
+            const item = button.parentElement;
+            const isOpen = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isOpen) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
